@@ -13,6 +13,15 @@ This is a responsive Personal Portfolio Website developed using HTML5 and CSS3 f
 - Media Queries
 - CSS Variables
 
+## Features
+
+- Responsive layout
+- Semantic HTML structure
+- Smooth navigation
+- Project showcase
+- Contact form
+- Hover effects and transitions
+
 ## Design
 
 The website uses a simple one-page layout for easy navigation. Flexbox and CSS Grid are used for arranging the content, while media queries ensure the website works well on different screen sizes.
@@ -21,10 +30,13 @@ The website uses a simple one-page layout for easy navigation. Flexbox and CSS G
 
 ChatGPT was used only for learning, debugging, improving responsiveness, and refining the documentation. All code was reviewed, modified, and tested before submission.
 
+## Limitations
 
+- Static contact form
+- No JavaScript or backend integration
 
 ## Author
 
-Siddharth Singh 
+**Siddharth Singh**  
 B.Tech Computer Science and Engineering  
 National Institute of Technology Warangal
