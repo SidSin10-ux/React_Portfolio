@@ -9,7 +9,6 @@ This is a responsive Personal Portfolio Website developed using HTML5 and CSS3 f
 - HTML5
 - CSS3
 - Flexbox
-- CSS Grid
 - Media Queries
 - CSS Variables
 
@@ -24,7 +23,7 @@ This is a responsive Personal Portfolio Website developed using HTML5 and CSS3 f
 
 ## Design
 
-The website uses a simple one-page layout for easy navigation. Flexbox and CSS Grid are used for arranging the content, while media queries ensure the website works well on different screen sizes.
+The website uses a simple one-page layout for easy navigation. Flexbox are used for arranging the content, while media queries ensure the website works well on different screen sizes.
 
 ## AI Assistance
 
