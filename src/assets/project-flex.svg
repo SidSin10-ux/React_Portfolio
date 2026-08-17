@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Flex project cover graphic">
+  <rect width="480" height="300" fill="#eef1f7"/>
+  <rect x="0" y="0" width="480" height="300" fill="none" stroke="#dde1ea" stroke-width="2"/>
+  <circle cx="160" cy="150" r="46" fill="#ffffff" stroke="#2b3a67" stroke-width="2"/>
+  <circle cx="320" cy="150" r="46" fill="#ffffff" stroke="#2b3a67" stroke-width="2"/>
+  <line x1="200" y1="150" x2="280" y2="150" stroke="#f2b134" stroke-width="4" stroke-dasharray="6 6"/>
+  <circle cx="160" cy="150" r="10" fill="#2b3a67"/>
+  <circle cx="320" cy="150" r="10" fill="#2b3a67"/>
+  <text x="240" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#1b2333">Flex</text>
+  <text x="240" y="272" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#5b6478">AI freelancer matching</text>
+</svg>

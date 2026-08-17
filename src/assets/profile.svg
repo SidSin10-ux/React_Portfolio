@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Placeholder avatar for Siddharth Singh">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b3a67"/>
+      <stop offset="100%" stop-color="#1c2647"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="24" fill="url(#bg)"/>
+  <circle cx="120" cy="96" r="42" fill="#e7eaf3" opacity="0.92"/>
+  <path d="M40 210c8-46 48-72 80-72s72 26 80 72" fill="#e7eaf3" opacity="0.92"/>
+  <text x="120" y="228" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#f2b134">S.S.</text>
+</svg>
