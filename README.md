@@ -208,6 +208,7 @@ const project = projects.find(p => p.id === projectId);
 
 If the ID is unknown, a "Project Not Found" message is displayed instead of crashing.
 
+```
 ---
 
 ## 15. Form Validation
