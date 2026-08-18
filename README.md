@@ -254,4 +254,5 @@ assistant (Google Antigravity). The AI helped with:
 - Reviewing WCAG contrast ratios
 - Writing comments explaining assignment concepts
 
-Github repository
+Github repository = https://github.com/SidSin10-ux/React_Portfolio
+google drive link = https://drive.google.com/drive/folders/1aKKP_gDlw3RknhvU56UywyeeqT2DdFWq?usp=sharing
