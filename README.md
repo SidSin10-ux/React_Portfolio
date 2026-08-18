@@ -27,7 +27,7 @@ Demonstrates core React concepts required for Assignment 2:
 ## 3. Installation
 
 ```bash
-# Clone or unzip the project, then:
+
 npm install
 ```
 
@@ -135,9 +135,9 @@ read it from one source. This is the "lift state to the nearest common ancestor"
 pattern.
 
 ```jsx
-// App.jsx
+
 const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
-// passed down:
+
 <Navbar theme={theme} onToggleTheme={toggleTheme} />
 ```
 
@@ -149,8 +149,8 @@ const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light
 ```jsx
 useEffect(() => {
   const timer = setTimeout(() => setIsLoading(false), 1000);
-  return () => clearTimeout(timer); // cleanup prevents memory leak
-}, []); // empty deps = runs once on mount
+  return () => clearTimeout(timer); 
+}, []); 
 ```
 
 **Effect 2 — Theme persistence** (`App.jsx`):
@@ -158,7 +158,7 @@ useEffect(() => {
 useEffect(() => {
   localStorage.setItem("theme", theme);
   document.body.className = theme === "dark" ? "theme-dark" : "theme-light";
-}, [theme]); // re-runs whenever theme changes
+}, [theme]); 
 ```
 
 ---
@@ -202,9 +202,9 @@ does not do a full page reload.
 `ProjectDetails.jsx` component:
 
 ```jsx
-const { projectId } = useParams();           // read URL segment
-const project = projects.find(p => p.id === projectId); // look up data
-```
+const { projectId } = useParams();          
+const project = projects.find(p => p.id === projectId);
+
 
 If the ID is unknown, a "Project Not Found" message is displayed instead of crashing.
 
@@ -251,11 +251,7 @@ Three layout tiers via CSS media queries:
 
 Parts of this project were developed with the assistance of an AI coding
 assistant (Google Antigravity). The AI helped with:
-- Converting the existing HTML/CSS portfolio into a React component structure
-- Implementing the CSS color system and animations
 - Reviewing WCAG contrast ratios
 - Writing comments explaining assignment concepts
 
-All code was reviewed, understood, and adapted by the student.
-The student is able to explain every component, prop, state variable, effect,
-and routing decision in a viva examination.
+Github repository
