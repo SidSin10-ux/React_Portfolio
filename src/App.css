@@ -1,120 +1,108 @@
-/* src/App.css
-   CSS variable-based design system. Dark mode swaps variables only.
-   Animations use CSS keyframes + transitions; no external libraries. */
-
-/* ============================================================
-   1. CSS CUSTOM PROPERTIES (Light theme)
-   ============================================================ */
 :root {
-  /* Backgrounds */
-  --color-bg:           #f5f7fb;
-  --color-bg-alt:       #eef1f6;
-  --color-card-bg:      #ffffff;
 
-  /* Text */
-  --color-text:         #1a1a2e;   /* near-black, WCAG AA on #f5f7fb */
-  --color-heading:      #0d0d1a;
-  --color-muted:        #4a5568;   /* ≥4.5:1 on #f5f7fb */
+  --color-bg: #f5f7fb;
+  --color-bg-alt: #eef1f6;
+  --color-card-bg: #ffffff;
 
-  /* Brand / Nav */
-  --color-nav-bg:       #111827;
-  --color-nav-text:     #f9fafb;
-  --color-nav-hover:    #fbbf24;   /* amber — passes 3:1 on dark bg */
 
-  /* Accent */
-  --color-accent:       #1d4ed8;   /* blue-700, ≥4.5:1 on white */
+  --color-text: #1a1a2e;
+  --color-heading: #0d0d1a;
+  --color-muted: #4a5568;
+
+
+  --color-nav-bg: #111827;
+  --color-nav-text: #f9fafb;
+  --color-nav-hover: #fbbf24;
+
+
+  --color-accent: #1d4ed8;
   --color-accent-hover: #1e40af;
 
-  /* Border */
-  --color-border:       #d1d5db;
 
-  /* Hover bg */
-  --color-hover:        #e5e7eb;
+  --color-border: #d1d5db;
 
-  /* Skill tags */
-  --color-skill-bg:     #111827;
-  --color-skill-text:   #f9fafb;
 
-  /* Buttons */
-  --color-btn-bg:       #f9fafb;
-  --color-btn-text:     #111827;
-  --color-btn-border:   #374151;
+  --color-hover: #e5e7eb;
 
-  /* Submit / primary button */
-  --color-submit-bg:    #111827;
-  --color-submit-text:  #f9fafb;
+
+  --color-skill-bg: #111827;
+  --color-skill-text: #f9fafb;
+
+
+  --color-btn-bg: #f9fafb;
+  --color-btn-text: #111827;
+  --color-btn-border: #374151;
+
+
+  --color-submit-bg: #111827;
+  --color-submit-text: #f9fafb;
   --color-submit-hover: #374151;
 
-  /* Form error */
-  --color-error:        #b91c1c;   /* ≥4.5:1 on white */
 
-  /* Misc */
-  --font-main:          -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --radius:             4px;
-  --shadow-sm:          0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
-  --shadow-md:          0 4px 12px rgba(0,0,0,.12);
-  --transition-speed:   0.25s;
+  --color-error: #b91c1c;
+
+
+  --font-main: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 4px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .12);
+  --transition-speed: 0.25s;
 }
 
-/* ============================================================
-   2. DARK THEME
-   ============================================================ */
+
 body.theme-dark {
-  --color-bg:           #0f1117;
-  --color-bg-alt:       #161b27;
-  --color-card-bg:      #1c2130;
+  --color-bg: #0f1117;
+  --color-bg-alt: #161b27;
+  --color-card-bg: #1c2130;
 
-  --color-text:         #e2e8f0;   /* ≥7:1 on #0f1117 */
-  --color-heading:      #f1f5f9;
-  --color-muted:        #94a3b8;   /* ≥4.7:1 on #0f1117 */
+  --color-text: #e2e8f0;
+  --color-heading: #f1f5f9;
+  --color-muted: #94a3b8;
 
-  --color-nav-bg:       #090c14;
-  --color-nav-text:     #f1f5f9;
-  --color-nav-hover:    #fbbf24;
+  --color-nav-bg: #090c14;
+  --color-nav-text: #f1f5f9;
+  --color-nav-hover: #fbbf24;
 
-  --color-accent:       #60a5fa;   /* blue-400, ≥4.5:1 on dark bg */
+  --color-accent: #60a5fa;
   --color-accent-hover: #93c5fd;
 
-  --color-border:       #2d3748;
-  --color-hover:        #2d3748;
+  --color-border: #2d3748;
+  --color-hover: #2d3748;
 
-  --color-skill-bg:     #2d3748;
-  --color-skill-text:   #e2e8f0;
+  --color-skill-bg: #2d3748;
+  --color-skill-text: #e2e8f0;
 
-  --color-btn-bg:       #2d3748;
-  --color-btn-text:     #f1f5f9;
-  --color-btn-border:   #4b5563;
+  --color-btn-bg: #2d3748;
+  --color-btn-text: #f1f5f9;
+  --color-btn-border: #4b5563;
 
-  --color-submit-bg:    #e2e8f0;
-  --color-submit-text:  #0f1117;
+  --color-submit-bg: #e2e8f0;
+  --color-submit-text: #0f1117;
   --color-submit-hover: #cbd5e1;
 
-  --color-error:        #fca5a5;   /* ≥4.5:1 on dark bg */
+  --color-error: #fca5a5;
 
-  --shadow-sm:          0 1px 3px rgba(0,0,0,.3);
-  --shadow-md:          0 4px 12px rgba(0,0,0,.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .4);
 }
 
-/* ============================================================
-   3. GLOBAL TRANSITIONS (body bg/color on theme switch)
-   ============================================================ */
+
 body {
   font-family: var(--font-main);
   background: var(--color-bg);
   color: var(--color-text);
   transition:
     background var(--transition-speed) ease,
-    color      var(--transition-speed) ease;
+    color var(--transition-speed) ease;
 }
 
-/* ============================================================
-   4. KEYFRAME ANIMATIONS
-   ============================================================ */
+
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -122,24 +110,27 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* Applied by Home.jsx hero content */
+
 .hero-content {
   animation: fadeSlideIn 0.55s ease both;
 }
 
-/* Applied by page wrappers for a subtle entrance */
+
 .page {
   animation: fadeIn 0.35s ease both;
   padding-bottom: 40px;
 }
 
-/* ============================================================
-   5. LAYOUT
-   ============================================================ */
+
 .container {
   width: 90%;
   max-width: 1080px;
@@ -157,18 +148,29 @@ body {
   flex: 1;
 }
 
-/* ============================================================
-   6. TYPOGRAPHY
-   ============================================================ */
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   font-family: var(--font-main);
   color: var(--color-heading);
   line-height: 1.2;
 }
 
-h1  { font-size: 2.2rem;  margin-bottom: 12px; }
-h2  { font-size: 1.5rem;  margin-bottom: 14px; }
-h3  { font-size: 1.15rem; margin-bottom: 8px;  }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
 
 .page-intro {
   color: var(--color-muted);
@@ -177,15 +179,13 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   margin-bottom: 24px;
 }
 
-/* ============================================================
-   7. NAV / HEADER
-   ============================================================ */
+
 .site-header {
   background: var(--color-nav-bg);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 6px rgba(0,0,0,.25);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
 }
 
 .nav-bar {
@@ -234,7 +234,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   gap: 4px;
 }
 
-/* Nav link with animated underline */
+
 .nav-link {
   position: relative;
   color: var(--color-nav-text);
@@ -278,10 +278,10 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   border-radius: 2px;
 }
 
-/* Theme toggle button in nav */
+
 .theme-toggle {
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: var(--color-nav-text);
   padding: 6px 14px;
   font-size: 0.85rem;
@@ -290,15 +290,15 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   margin-left: 10px;
   border-radius: var(--radius);
   transition:
-    color            var(--transition-speed) ease,
-    border-color     var(--transition-speed) ease,
-    background       var(--transition-speed) ease;
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    background var(--transition-speed) ease;
 }
 
 .theme-toggle:hover {
   color: var(--color-nav-hover);
   border-color: var(--color-nav-hover);
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .theme-toggle:focus-visible {
@@ -306,9 +306,6 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   outline-offset: 3px;
 }
 
-/* ============================================================
-   8. BUTTONS
-   ============================================================ */
 .btn {
   display: inline-block;
   font-family: var(--font-main);
@@ -319,10 +316,10 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   cursor: pointer;
   text-decoration: none;
   transition:
-    background   var(--transition-speed) ease,
-    color        var(--transition-speed) ease,
-    transform    var(--transition-speed) ease,
-    box-shadow   var(--transition-speed) ease;
+    background var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
 }
 
 .btn:hover {
@@ -333,10 +330,10 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   transform: translateY(0);
 }
 
-/* Primary: dark fill */
+
 .btn-primary {
   background: var(--color-submit-bg);
-  color:      var(--color-submit-text);
+  color: var(--color-submit-text);
   border: 2px solid transparent;
 }
 
@@ -345,10 +342,10 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-sm);
 }
 
-/* Secondary: outlined */
+
 .btn-secondary {
   background: transparent;
-  color:      var(--color-btn-text);
+  color: var(--color-btn-text);
   border: 2px solid var(--color-btn-border);
 }
 
@@ -357,15 +354,15 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-sm);
 }
 
-/* Hero secondary (on dark bg) */
+
 .hero .btn-secondary {
-  color:        var(--color-nav-text);
-  border-color: rgba(255,255,255,0.55);
+  color: var(--color-nav-text);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
 .hero .btn-secondary:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .btn:disabled {
@@ -379,13 +376,13 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   outline-offset: 3px;
 }
 
-/* Submit button (rectangular) */
+
 .btn-submit {
   display: inline-block;
   align-self: flex-start;
   padding: 11px 24px;
   background: var(--color-submit-bg);
-  color:      var(--color-submit-text);
+  color: var(--color-submit-text);
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
@@ -394,7 +391,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   font-weight: 600;
   transition:
     background var(--transition-speed) ease,
-    transform  var(--transition-speed) ease;
+    transform var(--transition-speed) ease;
 }
 
 .btn-submit:hover:not(:disabled) {
@@ -407,9 +404,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   outline-offset: 3px;
 }
 
-/* ============================================================
-   9. LOADING SCREEN (Home useEffect)
-   ============================================================ */
+
 .loading-screen {
   min-height: 60vh;
   display: flex;
@@ -419,9 +414,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   font-size: 1.1rem;
 }
 
-/* ============================================================
-   10. HERO
-   ============================================================ */
+
 .hero {
   background: var(--color-nav-bg);
   color: var(--color-nav-text);
@@ -429,7 +422,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   padding: 64px 24px 56px;
 }
 
-/* Avatar initials circle (replaces photo) */
+
 .hero-avatar {
   width: 80px;
   height: 80px;
@@ -475,17 +468,13 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   margin-top: 24px;
 }
 
-/* ============================================================
-   11. HOME SKILLS SECTION
-   ============================================================ */
+
 .home-skills {
   padding: 36px 20px 16px;
   text-align: center;
 }
 
-/* ============================================================
-   12. CARDS
-   ============================================================ */
+
 .card {
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
@@ -500,7 +489,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-md);
 }
 
-/* About page (no photo, just text) */
+
 .about-text-card {
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
@@ -510,9 +499,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-sm);
 }
 
-/* ============================================================
-   13. SKILLS
-   ============================================================ */
+
 .skills-title {
   margin-top: 0;
 }
@@ -532,15 +519,15 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
 
 .skill-pill {
   background: var(--color-skill-bg);
-  color:      var(--color-skill-text);
+  color: var(--color-skill-text);
   padding: 7px 16px;
   border-radius: 20px;
   font-size: 0.88rem;
   font-weight: 500;
   transition:
-    transform    var(--transition-speed) ease,
-    box-shadow   var(--transition-speed) ease,
-    background   var(--transition-speed) ease;
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    background var(--transition-speed) ease;
 }
 
 .skill-pill:hover {
@@ -548,9 +535,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-sm);
 }
 
-/* ============================================================
-   14. PROJECT CARDS (CSS Grid)
-   ============================================================ */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -567,8 +552,8 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-sm);
   /* HOVER LIFT ANIMATION */
   transition:
-    transform   var(--transition-speed) ease,
-    box-shadow  var(--transition-speed) ease;
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
 }
 
 .project-card:hover,
@@ -613,7 +598,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   margin-top: 10px;
 }
 
-/* Smooth reveal for "View Details" section */
+
 .project-info {
   margin-top: 12px;
   padding-top: 12px;
@@ -654,9 +639,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   outline-offset: 2px;
 }
 
-/* ============================================================
-   15. PROJECT DETAILS PAGE
-   ============================================================ */
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -685,9 +668,7 @@ h3  { font-size: 1.15rem; margin-bottom: 8px;  }
   box-shadow: var(--shadow-sm);
 }
 
-/* ============================================================
-   16. CONTACT PAGE
-   ============================================================ */
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -790,9 +771,7 @@ body.theme-dark .form-success {
   color: #6ee7b7;
 }
 
-/* ============================================================
-   17. 404 PAGE
-   ============================================================ */
+
 .not-found {
   text-align: center;
   padding-top: 80px;
@@ -811,22 +790,17 @@ body.theme-dark .form-success {
   font-size: 1.1rem;
 }
 
-/* ============================================================
-   18. FOOTER
-   ============================================================ */
+
 .site-footer {
   background: var(--color-nav-bg);
-  color:      var(--color-nav-text);
+  color: var(--color-nav-text);
   text-align: center;
   padding: 18px 20px;
   font-size: 0.9rem;
   opacity: 0.92;
 }
 
-/* ============================================================
-   19. RESPONSIVE BREAKPOINTS
-   Tablet ≤ 768px | Mobile ≤ 480px
-   ============================================================ */
+
 @media screen and (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr 1fr;
@@ -844,7 +818,7 @@ body.theme-dark .form-success {
     grid-template-columns: 1fr;
   }
 
-  /* Mobile menu */
+
   .menu-toggle {
     display: inline-flex;
     align-items: center;
@@ -899,13 +873,14 @@ body.theme-dark .form-success {
     flex-direction: column;
   }
 
-  h1 { font-size: 1.8rem; }
+  h1 {
+    font-size: 1.8rem;
+  }
 }
 
-/* ============================================================
-   20. REDUCED MOTION — accessibility requirement
-   ============================================================ */
+
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
