@@ -1,8 +1,3 @@
-/* src/index.css
-   Global reset + base element styles. Theme colors live in App.css as
-   CSS custom properties so dark mode only has to swap variable values,
-   not duplicate whole rulesets. */
-
 * {
   box-sizing: border-box;
 }
@@ -27,7 +22,6 @@ a {
   color: inherit;
 }
 
-/* Visible keyboard focus everywhere - required for accessibility. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,

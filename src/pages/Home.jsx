@@ -1,9 +1,3 @@
-// src/pages/Home.jsx
-//
-// USE EFFECT 1 (Home loading): simulates a short loading sequence when the
-// page first mounts, using setTimeout inside useEffect(..., []) so it only
-// runs once. The timer is cleaned up in the effect's return function so it
-// doesn't try to update state if the user navigates away within that 1s.
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -15,10 +9,9 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Cleanup prevents the timer from running after unmount.
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // ~1 second simulated load
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -34,9 +27,7 @@ function Home() {
   return (
     <div className="page home-page">
       <section className="hero" aria-labelledby="hero-name">
-        {/* hero-content gets the CSS fade-slide-in animation */}
         <div className="hero-content">
-          {/* Initials avatar replaces personal photo */}
           <div className="hero-avatar" aria-hidden="true">SS</div>
 
           <p className="eyebrow">Hello, I&apos;m</p>

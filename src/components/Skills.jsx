@@ -1,9 +1,3 @@
-// src/components/Skills.jsx
-//
-// Reusable component: it renders whatever list of skills it is given
-// through the "skills" prop, so it can be reused on the Home page (a
-// short highlight list) and the About page (the full list) with
-// different data.
 
 function Skills({ skills, title }) {
   return (

@@ -1,20 +1,8 @@
-// src/components/ProjectCard.jsx
-//
-// Receives ALL of its content through props (title, description, image,
-// techStack, link, id) - nothing about a specific project is hardcoded
-// here. Projects.jsx renders one <ProjectCard> per project in the array.
-//
-// It also owns its OWN "showDetails" state. Because Projects.jsx renders
-// several <ProjectCard> instances, each instance gets its own independent
-// copy of showDetails - clicking "View Details" on the QTrack card has no
-// effect on the Flex card, even though both cards run the exact same code.
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectInfo from "./ProjectInfo";
 
 function ProjectCard({ id, title, description, image, techStack, link }) {
-  // Independently scoped state - one copy per <ProjectCard> instance.
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -40,8 +28,6 @@ function ProjectCard({ id, title, description, image, techStack, link }) {
           </Link>
         </div>
 
-        {/* ProjectInfo only appears once this card's own state says to show it.
-            techStack and link are drilled down from the props this card received. */}
         {showDetails && <ProjectInfo techStack={techStack} link={link} />}
       </div>
     </article>

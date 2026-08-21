@@ -1,6 +1,3 @@
-// src/main.jsx
-// Entry point. BrowserRouter wraps the whole app so react-router-dom's
-// <Routes>, <Route>, <Link> and <NavLink> work everywhere inside <App />.
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

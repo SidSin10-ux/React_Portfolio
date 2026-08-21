@@ -1,9 +1,3 @@
-// src/pages/ProjectDetails.jsx
-//
-// Dynamic route: /projects/:projectId
-// Reads the projectId from the URL with useParams(), then looks up the
-// matching object in data/projects.js. We do NOT create a separate
-// component per project - one component handles every project ID.
 
 import { Link, useParams } from "react-router-dom";
 import projects from "../data/projects";
@@ -13,7 +7,6 @@ function ProjectDetails() {
   const { projectId } = useParams();
   const project = projects.find((item) => item.id === projectId);
 
-  // Handle an invalid/unknown project ID gracefully instead of crashing.
   if (!project) {
     return (
       <div className="page container">
@@ -42,7 +35,6 @@ function ProjectDetails() {
 
       <p>{project.fullDescription}</p>
 
-      {/* ProjectInfo receives techStack + link as props (prop drilling level 1 from this page) */}
       <ProjectInfo techStack={project.techStack} link={project.link} />
     </div>
   );

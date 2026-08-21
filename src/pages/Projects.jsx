@@ -1,9 +1,3 @@
-// src/pages/Projects.jsx
-//
-// LEVEL 1 of prop drilling starts here: this page imports the raw data
-// from data/projects.js and passes each field down to <ProjectCard> as
-// an individual prop. ProjectCard then drills techStack/link further down
-// into <ProjectInfo> (see components/ProjectCard.jsx and ProjectInfo.jsx).
 
 import projects from "../data/projects";
 import ProjectCard from "../components/ProjectCard";

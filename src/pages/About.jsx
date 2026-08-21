@@ -1,4 +1,3 @@
-// src/pages/About.jsx
 
 import Skills from "../components/Skills";
 

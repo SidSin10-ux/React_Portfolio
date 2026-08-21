@@ -1,7 +1,3 @@
-// src/components/Footer.jsx
-//
-// Simple reusable component, rendered once in App.jsx so it stays visible
-// across every route (part of the "shared layout" requirement).
 
 function Footer() {
   const year = new Date().getFullYear();

@@ -1,5 +1,3 @@
-// src/pages/NotFound.jsx
-// Catch-all route (path="*") for any URL that doesn't match a real page.
 
 import { Link } from "react-router-dom";
 

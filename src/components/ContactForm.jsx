@@ -1,14 +1,7 @@
-// src/components/ContactForm.jsx
-//
-// A fully controlled form: every input's value comes from state
-// (formData) and every keystroke updates that state through onChange.
-// A second piece of state, "errors", tracks validation messages per field.
-
 import { useState } from "react";
 
 const initialFormData = { name: "", email: "", message: "" };
 
-// Simple, readable email check - good enough for client-side validation.
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validate(formData) {
@@ -32,18 +25,14 @@ function validate(formData) {
 }
 
 function ContactForm() {
-  // Piece of state #1: the controlled input values.
   const [formData, setFormData] = useState(initialFormData);
-  // Piece of state #2: validation error messages, keyed by field name.
   const [errors, setErrors] = useState({});
-  // Piece of state #3: whether the form has been submitted successfully.
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     const nextFormData = { ...formData, [name]: value };
     setFormData(nextFormData);
-    // Re-validate live so error messages clear as soon as the user fixes them.
     setErrors(validate(nextFormData));
   };
 
@@ -53,13 +42,11 @@ function ContactForm() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      // No backend is required for this assignment - we just confirm success.
       setSubmitted(true);
       setFormData(initialFormData);
     }
   };
 
-  // The submit button stays disabled until all three fields pass validation.
   const isValid =
     formData.name.trim() && formData.email.trim() && formData.message.trim() &&
     Object.keys(validate(formData)).length === 0;

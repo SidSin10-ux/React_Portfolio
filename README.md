@@ -254,6 +254,7 @@ Parts of this project were developed with the assistance of an AI coding
 assistant (Google Antigravity). The AI helped with:
 - Reviewing WCAG contrast ratios
 - Writing comments explaining assignment concepts
+- README file is also genearted by AI
 
 ## 19. Links
 - Github repository = https://github.com/SidSin10-ux/React_Portfolio
