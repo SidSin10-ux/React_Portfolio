@@ -1,17 +1,45 @@
-
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import projects from "../data/projects";
 import ProjectInfo from "../components/ProjectInfo";
 
 function ProjectDetails() {
   const { projectId } = useParams();
-  const project = projects.find((item) => item.id === projectId);
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (!project) {
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/projects/${projectId}`)
+      .then((res) => {
+        if (!res.ok) {
+          if (res.status === 404) throw new Error("Project not found");
+          throw new Error("Server error");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setProject(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [projectId]);
+
+  if (loading) {
+    return (
+      <div className="page container">
+        <h1>Loading Project...</h1>
+      </div>
+    );
+  }
+
+  if (error || !project) {
     return (
       <div className="page container">
         <h1>Project Not Found</h1>
-        <p>We couldn&apos;t find a project with the ID &ldquo;{projectId}&rdquo;.</p>
+        <p>We couldn't find a project with the ID "{projectId}".</p>
         <Link to="/projects" className="btn btn-primary">
           ← Back to Projects
         </Link>

@@ -35,15 +35,40 @@ function ContactForm() {
     setFormData(nextFormData);
     setErrors(validate(nextFormData));
   };
+  const [serverError, setServerError] = useState(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setServerError(null);
+    setSubmitted(false);
+
     const validationErrors = validate(formData);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setSubmitted(true);
-      setFormData(initialFormData);
+      try {
+        const response = await fetch("http://localhost:5000/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            message: formData.message.trim(),
+          }),
+        });
+
+        if (!response.ok) {
+          const errData = await response.json();
+          throw new Error(errData.error || "Failed to submit");
+        }
+
+        setSubmitted(true);
+        setFormData(initialFormData);
+      } catch (err) {
+        setServerError(err.message);
+      }
     }
   };
 
@@ -113,11 +138,15 @@ function ContactForm() {
       <button type="submit" className="btn btn-primary btn-submit" disabled={!isValid}>
         Send Message
       </button>
+      {serverError && (
+        <p className="form-error" role="alert" style={{ color: "red", marginTop: "1rem" }}>
+          Server Error: {serverError}
+        </p>
+      )}
 
       {submitted && (
         <p className="form-success" role="status">
-          Thanks for reaching out! Your message has been noted (no backend is connected in
-          this assignment, so nothing is actually sent).
+          Thanks for reaching out! Your message has been successfully submitted to the server.
         </p>
       )}
     </form>

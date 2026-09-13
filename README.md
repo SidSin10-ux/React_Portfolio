@@ -27,7 +27,8 @@ Demonstrates core React concepts required for Assignment 2:
 ## 3. Installation
 
 ```bash
-
+npm install
+cd server
 npm install
 ```
 
@@ -35,8 +36,13 @@ npm install
 
 ---
 
-## 4. Running Locally
+Start the backend server:
+```bash
+cd server
+npm start
+```
 
+Start the frontend React app (in a new terminal window):
 ```bash
 npm run dev
 ```
@@ -55,7 +61,21 @@ Output goes to the `dist/` folder.
 
 ---
 
-## 6. Component Structure
+## 6. Backend API Endpoints (Express)
+
+The data source for projects and the contact form has been shifted to a Node.js/Express API living in the `/server` folder. Data is read from a JSON file, and submissions are stored in-memory. 
+
+| Method | Endpoint               | Description                                                           | Typical Response                             |
+|--------|------------------------|-----------------------------------------------------------------------|----------------------------------------------|
+| GET    | `/`                    | Health check                                                          | `200 OK` `{ "status": "ok" }`                |
+| GET    | `/api/projects`        | Fetch all projects                                                    | `200 OK` with JSON array of projects         |
+| GET    | `/api/projects/:id`    | Fetch a single project by ID                                          | `200 OK` (project) or `404` (error)          |
+| POST   | `/api/contact`         | Submit contact form via `{ name, email, message }` payload            | `201 Created` or `400 Bad Request` (errors)  |
+| GET    | `/api/contact`         | List all stored submissions (Note: intentionally open/unauthenticated for grading) | `200 OK` with array of submissions           |
+
+---
+
+## 7. Component Structure
 
 ```
 src/
