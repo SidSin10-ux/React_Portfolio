@@ -1,0 +1,173 @@
+{
+    "info": {
+        "_postman_id": "a1b2c3d4-e5f6-47g8-90h1-i2j3k4l5m6n7",
+        "name": "Portfolio Backend API Tests",
+        "description": "Postman Collection covering all endpoints and failure cases (B1-B7).",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "1. Health Check (Success)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "2. Get All Projects (Success)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/api/projects",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "projects"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "3. Get Single Project (Success)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/api/projects/p1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "projects",
+                        "p1"
+                    ]
+                },
+                "description": "Ensure 'p1' or another valid project ID exists in your data/projects.json."
+            },
+            "response": []
+        },
+        {
+            "name": "4. Get Single Project (Failure 404)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/api/projects/invalid-id-tests",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "projects",
+                        "invalid-id-tests"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "5. Submit Contact (Success)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Test User\",\r\n    \"email\": \"test@example.com\",\r\n    \"message\": \"This is a valid test message.\"\r\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/api/contact",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "contact"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "6. Submit Contact (Failure Validation 400)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Test User\",\r\n    \"email\": \"invalid-email-format\"\r\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/api/contact",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "contact"
+                    ]
+                },
+                "description": "Omits message and has invalid email format to trigger validation error."
+            },
+            "response": []
+        },
+        {
+            "name": "7. Get All Contacts (Success)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/api/contact",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "contact"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
