@@ -54,7 +54,8 @@ app.post('/api/contact', (req, res) => {
     if (!email || email.trim() === '') {
         return res.status(400).json({ error: 'Email is required' });
     }
-    if (!email.includes('@')) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
         return res.status(400).json({ error: 'Invalid email format' });
     }
     if (!message || message.trim() === '') {
