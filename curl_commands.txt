@@ -1,20 +1,37 @@
 1. Health Check (Success)
 curl -X GET http://localhost:5000/
 
+output:: {"status":"ok"}
+
 2. Get All Projects (Success)
 curl -X GET http://localhost:5000/api/projects
 
+output:: [{"id":"qtrack","title":"QTrack","description":"A web application to manage and track queues in various service centers, improving customer experience and reducing wait times.","fullDescription":"QTrack helps service centers (banks, clinics, government offices) manage live queues instead of physical tokens. Staff can call the next customer, see average wait time per counter, and get a simple analytics view of daily footfall. The goal was to cut visible wait times and give front-desk staff a clearer picture of load throughout the day.","techStack":["React.js","Node.js","Express","MongoDB"],"image":"/src/assets/project-qtrack.svg","link":"https://github.com/SidSin10-ux/QTrack"},{"id":"portfolio-website","title":"Portfolio Website","description":"A fully responsive personal portfolio website showcasing projects, skills, education, and achievements.","fullDescription":"The original Assignment 1 project: a static, single-page portfolio built with semantic HTML5 and hand-written CSS3. It uses Flexbox for layout, CSS custom properties for theming, and media queries so the page holds up on phones, tablets, and desktop screens. This React app you are viewing now is the direct continuation of that project.","techStack":["HTML5","CSS3","Flexbox","Media Queries"],"image":"/src/assets/project-portfolio.svg","link":"https://github.com/SidSin10-ux/React_Portfolio"},{"id":"flex","title":"Flex","description":"An AI-based web application that connects freelancers with projects using AI-based matching algorithms based on skills and experience.","fullDescription":"Flex matches freelancers to suitable projects automatically instead of relying on manual browsing. A simple matching algorithm scores freelancer skill tags against project requirements and ranks the best-fit freelancers for each listing, with a dashboard for both freelancers and clients.","techStack":["React.js","Node.js","Express","MongoDB"],"image":"/src/assets/project-flex.svg","link":"https://github.com/SidSin10-ux/Flex"}]
+
 3. Get Single Project (Success)
-curl -X GET http://localhost:5000/api/projects/p1
+curl -X GET http://localhost:5000/api/projects/qtrack
+
+output:: {"id":"qtrack","title":"QTrack","description":"A web application to manage and track queues in various service centers, improving customer experience and reducing wait times.","fullDescription":"QTrack helps service centers (banks, clinics, government offices) manage live queues instead of physical tokens. Staff can call the next customer, see average wait time per counter, and get a simple analytics view of daily footfall. The goal was to cut visible wait times and give front-desk staff a clearer picture of load throughout the day.","techStack":["React.js","Node.js","Express","MongoDB"],"image":"/src/assets/project-qtrack.svg","link":"https://github.com/SidSin10-ux/QTrack"}
+
 
 4. Get Single Project (Failure 404)
-curl -X GET http://localhost:5000/api/projects/invalid-id-tests
+curl -X GET http://localhost:5000/api/projects/timetrix
+
+output:: {"error":"Project not found"}
 
 5. Submit Contact (Success)
 curl -X POST http://localhost:5000/api/contact -H "Content-Type: application/json" -d "{\"name\": \"Test User\", \"email\": \"test@example.com\", \"message\": \"This is a valid test message.\"}"
 
+
+output:: {"message":"Submission successful","data":{"name":"Test User","email":"test@example.com","message":"This is a valid test message.","date":"2026-09-18T08:47:00.706Z"}}
+
+
 6. Submit Contact (Failure Validation 400)
 curl -X POST http://localhost:5000/api/contact -H "Content-Type: application/json" -d "{\"name\": \"Test User\", \"email\": \"invalid-email-format\"}"
 
+output:: {"error":"Invalid email format"}
+
 7. Get All Contacts (Success)
 curl -X GET http://localhost:5000/api/contact
+
+output:: [{"name":"Test User","email":"test@example.com","message":"This is a valid test message.","date":"2026-09-18T08:47:00.706Z"}]
